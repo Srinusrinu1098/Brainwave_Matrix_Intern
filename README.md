@@ -33,14 +33,14 @@ State Management: useState, useEffect
 
 Routing: React Router  
 
-                        HOME PAGE
+HOME PAGE
 ![Homepage](https://github.com/user-attachments/assets/07cb099c-deaf-4638-b264-3750aaaa81bf)
 
-                        LOGIN PAGE
+LOGIN PAGE
 ![LoginPage](https://github.com/user-attachments/assets/6c191777-91d2-47ce-8e36-80bf4ab8f7b8)
 
-                        MONEY MANAGER PAGE
+MONEY MANAGER PAGE
 ![MoneyManagerPage](https://github.com/user-attachments/assets/87755568-41fb-4b42-9c2f-a4bc1df466c0)
 
-                        NOT FOUND PAGE
+NOT FOUND PAGE
 ![error page](https://github.com/user-attachments/assets/1edaa7c8-ee66-4b4a-aea6-d454fadbba57)
