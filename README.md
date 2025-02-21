@@ -30,8 +30,34 @@ Frontend: React (Vite)
 Styling: Tailwind CSS, ShadCN
 Authentication: Google OAuth
 State Management: useState, useEffect
-
 Routing: React Router  
+
+📦 Installation & Setup
+1️⃣ Clone the repository:
+
+sh
+Copy
+Edit
+git clone https://github.com/your-username/money-manager.git
+cd money-manager
+2️⃣ Install dependencies:
+
+sh
+Copy
+Edit
+npm install
+3️⃣ Start the development server:
+
+sh
+Copy
+Edit
+npm run dev
+4️⃣ Open in browser:
+
+arduino
+Copy
+Edit
+http://localhost:5173
 
                                                               HOME PAGE
 ![Homepage](https://github.com/user-attachments/assets/07cb099c-deaf-4638-b264-3750aaaa81bf)
