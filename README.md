@@ -33,7 +33,7 @@ State Management: useState, useEffect
 
 Routing: React Router  
 
-                                    HOME PAGE
+                                                              HOME PAGE
 ![Homepage](https://github.com/user-attachments/assets/07cb099c-deaf-4638-b264-3750aaaa81bf)
 
                                     LOGIN PAGE
