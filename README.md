@@ -33,30 +33,18 @@ State Management: useState, useEffect
 Routing: React Router  
 
 📦 Installation & Setup
-1️⃣ Clone the repository:
 
-sh
-Copy
-Edit
+1️⃣ Clone the repository:
 git clone https://github.com/your-username/money-manager.git
 cd money-manager
+
 2️⃣ Install dependencies:
-
-sh
-Copy
-Edit
 npm install
+
 3️⃣ Start the development server:
-
-sh
-Copy
-Edit
 npm run dev
-4️⃣ Open in browser:
 
-arduino
-Copy
-Edit
+4️⃣ Open in browser:
 http://localhost:5173
 
                                                               HOME PAGE
