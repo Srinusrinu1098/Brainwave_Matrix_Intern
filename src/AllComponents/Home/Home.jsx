@@ -11,7 +11,8 @@ function Home() {
   const [user, adduser] = useState(localStorage.getItem("user"));
 
   const GetStarted = () => {
-    if (username.length < 5) {
+    if (username.trim().length < 5) {
+      userentered("");
       return toast.error("Name should contain atleast 5 letters");
     } else {
       Cookies.set("Srinu", username, { expires: 5 });
@@ -35,6 +36,7 @@ function Home() {
           type="text"
           className="w-full h-8 outline-none pl-6 round rounded-md border border-white bg-black text-white"
           placeholder="Enter your name"
+          value={username}
           onChange={(e) => userentered(e.target.value)}
         />
         <h2 className="bg-clip-text text-transparent text-center bg-gradient-to-b from-green-900 to-gray-700 dark:from-neutral-600 dark:to-white text-2xl md:text-4xl lg:text-7xl font-sans py-2 md:py-10 relative z-20 font-bold tracking-tight">
