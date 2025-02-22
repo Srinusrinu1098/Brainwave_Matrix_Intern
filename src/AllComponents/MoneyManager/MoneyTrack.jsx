@@ -191,7 +191,7 @@ function MoneyTrack() {
               <select
                 id="select"
                 value={emptyData.type}
-                className="w-full border border-black outline-none text-black  pl-2 h-8 rounded-md my-2"
+                className="w-full border border-black outline-none text-black bg-white pl-2 h-8 rounded-md my-2"
                 onChange={(e) => handelItems("type", e.target.value)}
               >
                 <option key="income" value="Income">
