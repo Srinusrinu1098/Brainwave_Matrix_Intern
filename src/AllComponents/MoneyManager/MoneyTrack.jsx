@@ -127,7 +127,7 @@ function MoneyTrack() {
           </div>
         </div>
         <div className="py-8">
-          <div className=" flex flex-col justify-center gap-2 sm:flex-row sm:gap-10 md:gap-5 px-12 items-center">
+          <div className=" flex flex-col justify-center gap-2 sm:flex-row sm:gap-5 md:gap-5 px-12 items-center ">
             <form
               className="bg-white w-[350px] font-mono h-[400px] flex flex-col justify-center p-6 shadow-2xl rounded-md sm:w-[250px] md:min-w-[250px] lg:w-[350px]"
               onSubmit={addData}
@@ -142,7 +142,7 @@ function MoneyTrack() {
                 type="text"
                 value={emptyData.name}
                 id="Subject"
-                className="w-full border border-gray-500 outline-none pl-2 h-8 rounded-md my-2"
+                className="w-full border border-black outline-none pl-2 h-8 rounded-md my-2 bg-white text-black"
                 placeholder="TITLE"
                 onChange={(e) => handelItems("name", e.target.value)}
               />
@@ -154,7 +154,7 @@ function MoneyTrack() {
                 id="amount"
                 value={emptyData.amount}
                 placeholder="AMOUNT"
-                className="w-full border border-gray-500 outline-none pl-2 h-8 rounded-md my-2"
+                className="w-full border border-black bg-white text-black outline-none pl-2 h-8 rounded-md my-2"
                 onChange={(e) => handelItems("amount", e.target.value)}
               />
               <label className="font-bold" htmlFor="select">
@@ -163,7 +163,7 @@ function MoneyTrack() {
               <select
                 id="select"
                 value={emptyData.type}
-                className="w-full border border-gray-500 outline-none pl-2 h-8 rounded-md my-2"
+                className="w-full border border-black outline-none text-black  pl-2 h-8 rounded-md my-2"
                 onChange={(e) => handelItems("type", e.target.value)}
               >
                 <option key="income" value="Income">
@@ -178,7 +178,7 @@ function MoneyTrack() {
               </Button>
             </form>
 
-            <div className="bg-white w-[350px] min-h-[400px] flex flex-col   p-6 shadow-2xl rounded-md sm:w-[280px] md:w-[350px]  lg:w-[670px]">
+            <div className="bg-white w-[350px] min-h-[400px] flex flex-col   p-6 shadow-2xl rounded-md sm:w-[350px] md:w-[480px]  lg:w-[630px]">
               <h2>History</h2>
               <div className="grid grid-cols-3 items-center my-3 font-bold font-mono bg-slate-500 p-3 text-white round rounded-xl lg:flex lg:gap-36 ">
                 <p className="text-sm">Title</p>
@@ -191,8 +191,12 @@ function MoneyTrack() {
                     key={each.id}
                     className="my-1 w-full grid grid-cols-4 font-bold gap-11 sm:gap-14 lg:gap-32 px-3 justify-center bg-slate-500 h-10   items-center font-serif text-white round rounded-xl"
                   >
-                    <p className="text-sm">{each.name}</p>
-                    <p className="text-sm">{each.amount}</p>
+                    <p className="text-sm truncate w-14 lg:w-24 text-ellipsis overflow-hidden whitespace-nowrap">
+                      {each.name}
+                    </p>
+                    <p className="text-sm truncate w-14 lg:w-24 text-ellipsis overflow-hidden whitespace-nowrap">
+                      {each.amount}
+                    </p>
                     <p className="text-sm">{each.type}</p>
                     <p
                       onClick={() => ChangeTheList(each.id)}

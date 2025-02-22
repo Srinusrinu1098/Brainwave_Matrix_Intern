@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { FcGoogle } from "react-icons/fc";
 import { useGoogleLogin } from "@react-oauth/google";
 import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 function Login() {
   const [log, setLog] = useState(localStorage.getItem("user"));
@@ -69,7 +70,13 @@ function Login() {
 
         <Lottie animationData={loginEntries} loop={true} className="w-[50vh]" />
         <div className="flex gap-4">
-          <Button className="my-4" onClick={login}>
+          <Button
+            className="my-4"
+            onClick={() => {
+              toast.info("🔄 Redirecting to Google Login...");
+              login();
+            }}
+          >
             Login <FcGoogle />
           </Button>
           <Button className="my-4" onClick={loginBack}>

@@ -12,7 +12,7 @@ function Home() {
 
   const GetStarted = () => {
     if (username.length < 5) {
-      return toast("Name should contain atleast 5 letters");
+      return toast.error("Name should contain atleast 5 letters");
     } else {
       Cookies.set("Srinu", username, { expires: 5 });
     }

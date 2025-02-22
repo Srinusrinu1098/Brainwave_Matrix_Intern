@@ -3,6 +3,7 @@ import Lottie from "lottie-react";
 import Logo from "/src/assets/Logo.json";
 import login from "/src/assets/login.json";
 import Logout from "/src/assets/Logout.json";
+import Cookies from "js-cookie";
 
 import {
   AlertDialog,
@@ -44,6 +45,7 @@ function Headers() {
         Accept: "application/json",
       },
     };
+    console.log(Cookies.get("Srinu"));
 
     const response = await fetch(url, options);
     const data = await response.json();
@@ -63,6 +65,7 @@ function Headers() {
 
   const userLogout = () => {
     localStorage.removeItem("user");
+    Cookies.remove("Srinu");
     setUser(null);
     navigate("/");
   };
@@ -75,7 +78,7 @@ function Headers() {
         className="w-14 h-14"
         onClick={() => {
           if (user) {
-            toast("Please Logout first");
+            toast.error("Please Logout first");
           } else {
             navigate("/");
           }
@@ -114,7 +117,14 @@ function Headers() {
           animationData={login}
           loop={true}
           className="w-14 h-14 cursor-pointer !important"
-          onClick={getLogedin}
+          onClick={() => {
+            if (!Cookies.get("Srinu")) {
+              toast.error("⚠️ Please enter your name and click 'Get Started'!");
+            } else {
+              toast.info("🔄 Redirecting to Google Login...");
+              getLogedin();
+            }
+          }}
         />
       )}
     </div>
