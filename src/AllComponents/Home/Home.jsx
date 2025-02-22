@@ -11,7 +11,7 @@ function Home() {
   const [user, adduser] = useState(localStorage.getItem("user"));
 
   const GetStarted = () => {
-    if (username.trim().length < 5) {
+    if (username.replace(/\s+/g, "").length < 5) {
       userentered("");
       return toast.error("Name should contain atleast 5 letters");
     } else {
