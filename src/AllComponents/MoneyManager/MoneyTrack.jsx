@@ -31,7 +31,31 @@ function MoneyTrack() {
     if (!localStorage.getItem("user")) {
       navigate("/login");
     }
+
+    const storedLists = JSON.parse(localStorage.getItem("lists")) ?? [];
+    const storedAmounts = JSON.parse(localStorage.getItem("amounts")) ?? {
+      balance: 0,
+      income: 0,
+      expenses: 0,
+    };
+
+    listItems(Array.isArray(storedLists) ? storedLists : []);
+    setAmounts(
+      typeof storedAmounts === "object" && storedAmounts !== null
+        ? storedAmounts
+        : { balance: 0, income: 0, expenses: 0 }
+    );
   }, []);
+
+  useEffect(() => {
+    if (lists.length > 0) {
+      localStorage.setItem("lists", JSON.stringify(lists));
+    }
+    const finds = Object.values(amounts).find((each) => each > 0);
+    if (finds) {
+      localStorage.setItem("amounts", JSON.stringify(amounts));
+    }
+  }, [lists, amounts]);
 
   const userName = Cookies.get("Srinu");
 
@@ -67,13 +91,17 @@ function MoneyTrack() {
   };
 
   const ChangeTheList = (value) => {
-    console.log(value);
     const newLists = lists.filter((each) => value !== each.id);
 
     listItems(newLists);
-    const deletedValue = lists.find((each) => each.id === value);
 
-    console.log(deletedValue);
+    const deletedValue = lists.find((each) => each.id === value);
+    console.log(lists);
+    if (lists.length === 1) {
+      localStorage.removeItem("lists");
+      localStorage.removeItem("amounts");
+    }
+
     if (deletedValue) {
       if (deletedValue.type === "Expenses") {
         setAmounts((prevData) => ({

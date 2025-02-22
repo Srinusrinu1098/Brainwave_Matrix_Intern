@@ -65,6 +65,8 @@ function Headers() {
 
   const userLogout = () => {
     localStorage.removeItem("user");
+    localStorage.removeItem("lists");
+    localStorage.removeItem("amounts");
     Cookies.remove("Srinu");
     setUser(null);
     navigate("/");
